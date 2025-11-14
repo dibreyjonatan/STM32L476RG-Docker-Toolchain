@@ -1,0 +1,16 @@
+name : CI for compilation using docker CMSIS
+on :
+  push:
+    branches:
+      - master 
+
+jobs :
+  build :
+    runs-on : ubuntu-latest
+    container:
+      image: kamda314/stm32l476rg_compiler:latest
+    steps :
+      - name : Checkout repository
+        uses : actions/checkout@v3
+      - run : make CMSIS_DIR="/cmsis" all    
+
