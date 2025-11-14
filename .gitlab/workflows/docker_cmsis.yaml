@@ -13,5 +13,5 @@ jobs :
       - name : Checkout repository
         uses : actions/checkout@v3
         
-      - run : make CMSIS_DIR="/cmsis" all    
+      - run : make CMSIS_DIR="/cmsis/cmsis" all    
 
